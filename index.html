@@ -1,167 +1,128 @@
 <!DOCTYPE html>
-<html lang="en">
-
-<head>
+<html>
+  <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="./perfect-scrollbar-1.4.0/dist/perfect-scrollbar.js"></script>
-    <link rel="stylesheet" href="./perfect-scrollbar-1.4.0/css/perfect-scrollbar.css" />
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-    <script src = "./Flat-HTML5-Palette-Color-Picker-For-jQuery-colorPick-js/src/colorPick.js"></script>
-    <link rel="stylesheet" href="./Flat-HTML5-Palette-Color-Picker-For-jQuery-colorPick-js/src/colorPick.css"/>
-    <link rel="stylesheet" href="style.css" />
-    <title>Excel Clone</title>
-</head>
+    <title>perfect-scrollbar</title>
+    <link href="bootstrap-combined.min.css" rel="stylesheet">
+    <link href="perfect-scrollbar.css" rel="stylesheet">
+    <link href="prettify.css" rel="stylesheet">
+    <style>
+    .github-corner:hover .octo-arm {
+      animation:octocat-wave 560ms ease-in-out;
+    }
+    @keyframes octocat-wave {
+      0%,100% { transform:rotate(0); }
+      20%,60% { transform:rotate(-25deg); }
+      40%,80%{ transform:rotate(10deg); }
+    }
+    @media (max-width: 500px) {
+      .github-corner:hover .octo-arm {
+        animation:none;
+      }
+      .github-corner .octo-arm {
+        animation:octocat-wave 560ms ease-in-out;
+      }
+    }
+    </style>
+    <style>
+    html, body { background-color: #fcfcfe; }
+    .body { padding: 50px 0px; }
+    .logo { font-size:100px; text-align:center; line-height: 70px; }
+    .description { padding-top: 20px; text-align:center; }
+    .subtitle { padding: 70px 0 30px; }
+    .list { width: 250px; margin: 0 auto; text-align: left; }
+    .list li { margin-bottom: 5px; white-space: nowrap; }
+    #demo { position:relative; margin:0px auto; padding:0px; width: 600px; height: 400px; overflow: hidden; }
+    #demo .content { background-image: url('./azusa.jpg'); width: 1280px; height: 720px; }
+    </style>
+    <style>
+    @import url(https://cdn.rawgit.com/tonsky/FiraCode/1.204/distr/fira_code.css);
+    pre.prettyprint {
+      text-align:left;
+      width: 470px;
+      margin:0px auto;
+      font-size: 15px;
+      font-family: 'Fira Code', Monaco, Menlo, Consolas, 'Courier New', monospace;
+      background-color: #fafafc;
+      padding: 15px 20px;
+    }
+    </style>
+  </head>
+  <body>
+    <a href="https://github.com/utatti/perfect-scrollbar" class="github-corner" aria-label="View source on Github"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; position: fixed; top: 0; border: 0; right: 0; z-index: 100;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+    <div class="body">
+      <h1 class="logo">perfect-scrollbar</h1>
+      <p class="lead" style="text-align:center;">Minimalistic but perfect custom scrollbar plugin</p>
+      <div class="description">
+        <h2 class="subtitle"><i>perfect</i> means...</h2>
+        <ul class="list">
+          <li class="lead">No change on design layout</li>
+          <li class="lead">No manipulation on DOM tree</li>
+          <li class="lead">Use plain scrollTop and scrollLeft</li>
+          <li class="lead">Scrollbar style is fully customizable</li>
+          <li class="lead">Efficient update on layout change</li>
+        </ul>
 
-<body>
-    <div class="container">
-        <div class="title">Excel - Book</div>
-        <div class="menu-bar">
-            <div class="menu-bar-item" id = "menu-file">File</div>
-            <div class="menu-bar-item selected">Home</div>
-            <div class="menu-bar-item">Insert</div>
-            <div class="menu-bar-item">Page Layout</div>
-            <div class="menu-bar-item">View</div>
+        <h2 class="subtitle">Demo</h2>
+        <div id="demo">
+          <div class="content">
+          </div>
         </div>
-        <div class="menu-icon-bar">
-            <div class="material-icons menu-icon" id = "cut">content_cut</div>
-            <div class="material-icons menu-icon" id = "copy">content_copy</div>
-            <div class="material-icons menu-icon" id = "paste">content_paste</div>
-            <select class="menu-selector" id="font-family">
-                <option style="font-family:Noto Sans" value="Noto Sans">Noto Sans</option>
-                <option style="font-family:Arial" value="Arial">Arial</option>
-                <option style="font-family:Calibri" value="Calibri">Calibri</option>
-                <option style="font-family:Comic Sans MS" value="Comic Sans MS">Comic Sans MS</option>
-                <option style="font-family:Courier New" value="Courier New">Courier New</option>
-                <option style="font-family:Impact" value="Impact">Impact</option>
-                <option style="font-family:Georgia" value="Georgia">Georgia</option>
-                <option style="font-family:Garamond" value="Garamond">Garamond</option>
-                <option style="font-family:Lato" value="Lato">Lato</option>
-                <option style="font-family:Open Sans" value="Open Sans">Open Sans</option>
-                <option style="font-family:Palatino" value="Palatino">Palatino</option>
-                <option style="font-family:Verdana" value="Verdana">Verdana</option>
-            </select>
-            <select class="menu-selector" id="font-size">
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14" selected>14</option>
-                <option value="16">16</option>
-                <option value="18">18</option>
-                <option value="20">20</option>
-                <option value="22">22</option>
-                <option value="24">24</option>
-                <option value="26">26</option>
-                <option value="28">28</option>
-                <option value="30">30</option>
-                <option value="32">32</option>
-            </select>
-            <div class="material-icons menu-icon" id="bold">format_bold</div>
-            <div class="material-icons menu-icon" id="italic">format_italic</div>
-            <div class="material-icons menu-icon" id="underlined">format_underline</div>
-            <div class="material-icons menu-icon pick-color"><img id="fill-color" src="https://img.icons8.com/material-sharp/20/000000/fill-color.png"/></div>
-            <div class="material-icons menu-icon pick-color"><img id="text-color" src="https://img.icons8.com/material-sharp/20/000000/generic-text.png"/></div>
-            <div class="material-icons menu-icon alignment selected" data-type="left">format_align_left</div>
-            <div class="material-icons menu-icon alignment" data-type="center">format_align_center</div>
-            <div class="material-icons menu-icon alignment" data-type="right">format_align_right</div>
+        <div style="margin-top:15px;">
+          <div class="input-prepend">
+            <span class="add-on" style="width:100px;">Width</span>
+            <input type="text" id="width" placeholder="600">
+          </div>
+          <div class="input-prepend">
+            <span class="add-on" style="width:100px;">Height</span>
+            <input type="text" id="height" placeholder="400">
+          </div>
+          <button id="button" class="btn btn-primary">Change Size!</button>
         </div>
-        <div class="formula-bar">
-            <div id="selected-cell" contenteditable="true"></div>
-            <div id="formula-sign"><svg class="[object SVGAnimatedString] ewa-svg-icon" focusable="false"
-                    viewBox="0,0,2048,2048" style="height: 1rem; width: 1rem;">
-                    <title>Insert Function</title>
-                    <path type="path" class="OfficeIconColors_HighContrast"
-                        d="M 1198 639 h -194 l -126 511 q -62 249 -133 421 q -71 171 -150 277 q -79 106 -164 153 q -85 47 -175 47 q -30 0 -60 -9 q -30 -9 -54 -26 q -24 -17 -39 -42 q -15 -25 -15 -57 q 0 -22 10 -42 q 9 -21 26 -36 q 16 -15 38 -24 q 22 -9 46 -9 q 19 0 36 7 q 17 7 30 19 q 13 12 21 28 q 7 15 7 32 q 0 36 -30 63 q 33 0 66 -13 q 33 -14 64 -45 q 31 -31 59 -81 q 28 -50 51 -123 q 1 -8 6 -26 q 5 -18 15 -52 q 10 -34 25 -87 q 14 -53 34 -131 l 191 -755 h -217 l 26 -122 h 53 q 53 0 79 -3 q 26 -4 37 -8 q 7 -3 21 -9 q 13 -6 30 -18 q 16 -12 34 -31 q 17 -20 32 -50 q 33 -65 62 -113 q 29 -49 59 -85 q 86 -103 180 -151 q 93 -49 176 -49 q 45 0 82 14 q 37 14 64 36 q 26 22 41 50 q 14 28 14 56 q 0 24 -8 45 q -9 21 -24 37 q -15 15 -36 24 q -21 9 -46 9 q -44 0 -72 -26 q -29 -27 -29 -65 q 0 -12 5 -23 q 4 -11 9 -20 q 5 -10 10 -19 q 4 -9 4 -16 q -7 -5 -24 -5 q -70 0 -126 54 q -56 54 -101 151 q -6 13 -13 27 q -7 14 -16 37 q -10 23 -22 59 q -13 36 -30 92 h 195 m 488 514 q -49 40 -119 160 q 19 80 33 137 q 13 56 23 96 q 9 39 15 64 q 6 24 11 39 q 4 14 8 21 q 3 7 7 11 q 7 0 20 -10 q 13 -11 29 -29 q 15 -19 32 -43 q 17 -25 32 -52 l 76 39 q -26 50 -59 95 q -33 44 -68 78 q -35 34 -68 54 q -34 20 -61 20 q -22 0 -50 -13 q -28 -13 -51 -56 q -3 -5 -7 -17 q -4 -12 -11 -38 q -8 -27 -19 -70 q -11 -44 -27 -112 q -54 89 -97 148 q -43 59 -79 94 q -37 35 -69 50 q -33 14 -65 14 q -20 0 -39 -7 q -20 -7 -36 -20 q -17 -13 -27 -32 q -10 -19 -10 -44 q 0 -38 26 -65 q 26 -28 64 -28 q 17 0 30 6 q 12 5 23 13 q 11 7 22 16 q 10 8 23 13 q 30 -25 60 -62 q 29 -37 56 -77 q 27 -41 50 -81 q 22 -41 38 -73 q -18 -70 -28 -111 q -11 -42 -17 -64 q -6 -23 -8 -30 q -3 -8 -3 -9 q -9 -25 -19 -42 q -10 -17 -24 -27 q -14 -10 -34 -14 q -20 -4 -50 -4 q -9 0 -23 1 q -14 0 -46 2 v -80 l 269 -47 q 25 27 42 47 q 16 19 28 41 q 12 22 23 53 q 10 31 24 82 l 46 -69 q 22 -34 51 -62 q 29 -28 59 -48 q 29 -20 58 -31 q 28 -12 49 -12 q 47 0 79 27 q 31 27 31 68 q 0 27 -8 45 q -9 17 -23 28 q -14 11 -31 16 q -17 4 -33 4 q -13 0 -25 -3 q -12 -4 -23 -8 q -12 -4 -23 -7 q -12 -4 -24 -4 q -2 0 -10 3 q -8 3 -23 16 z">
-                    </path>
-                    <path type="path" class="OfficeIconColors_m22"
-                        d="M 1198 639 h -194 l -126 511 q -62 249 -133 421 q -71 171 -150 277 q -79 106 -164 153 q -85 47 -175 47 q -30 0 -60 -9 q -30 -9 -54 -26 q -24 -17 -39 -42 q -15 -25 -15 -57 q 0 -22 10 -42 q 9 -21 26 -36 q 16 -15 38 -24 q 22 -9 46 -9 q 19 0 36 7 q 17 7 30 19 q 13 12 21 28 q 7 15 7 32 q 0 36 -30 63 q 33 0 66 -13 q 33 -14 64 -45 q 31 -31 59 -81 q 28 -50 51 -123 q 1 -8 6 -26 q 5 -18 15 -52 q 10 -34 25 -87 q 14 -53 34 -131 l 191 -755 h -217 l 26 -122 h 53 q 53 0 79 -3 q 26 -4 37 -8 q 7 -3 21 -9 q 13 -6 30 -18 q 16 -12 34 -31 q 17 -20 32 -50 q 33 -65 62 -113 q 29 -49 59 -85 q 86 -103 180 -151 q 93 -49 176 -49 q 45 0 82 14 q 37 14 64 36 q 26 22 41 50 q 14 28 14 56 q 0 24 -8 45 q -9 21 -24 37 q -15 15 -36 24 q -21 9 -46 9 q -44 0 -72 -26 q -29 -27 -29 -65 q 0 -12 5 -23 q 4 -11 9 -20 q 5 -10 10 -19 q 4 -9 4 -16 q -7 -5 -24 -5 q -70 0 -126 54 q -56 54 -101 151 q -6 13 -13 27 q -7 14 -16 37 q -10 23 -22 59 q -13 36 -30 92 h 195 m 488 514 q -49 40 -119 160 q 19 80 33 137 q 13 56 23 96 q 9 39 15 64 q 6 24 11 39 q 4 14 8 21 q 3 7 7 11 q 7 0 20 -10 q 13 -11 29 -29 q 15 -19 32 -43 q 17 -25 32 -52 l 76 39 q -26 50 -59 95 q -33 44 -68 78 q -35 34 -68 54 q -34 20 -61 20 q -22 0 -50 -13 q -28 -13 -51 -56 q -3 -5 -7 -17 q -4 -12 -11 -38 q -8 -27 -19 -70 q -11 -44 -27 -112 q -54 89 -97 148 q -43 59 -79 94 q -37 35 -69 50 q -33 14 -65 14 q -20 0 -39 -7 q -20 -7 -36 -20 q -17 -13 -27 -32 q -10 -19 -10 -44 q 0 -38 26 -65 q 26 -28 64 -28 q 17 0 30 6 q 12 5 23 13 q 11 7 22 16 q 10 8 23 13 q 30 -25 60 -62 q 29 -37 56 -77 q 27 -41 50 -81 q 22 -41 38 -73 q -18 -70 -28 -111 q -11 -42 -17 -64 q -6 -23 -8 -30 q -3 -8 -3 -9 q -9 -25 -19 -42 q -10 -17 -24 -27 q -14 -10 -34 -14 q -20 -4 -50 -4 q -9 0 -23 1 q -14 0 -46 2 v -80 l 269 -47 q 25 27 42 47 q 16 19 28 41 q 12 22 23 53 q 10 31 24 82 l 46 -69 q 22 -34 51 -62 q 29 -28 59 -48 q 29 -20 58 -31 q 28 -12 49 -12 q 47 0 79 27 q 31 27 31 68 q 0 27 -8 45 q -9 17 -23 28 q -14 11 -31 16 q -17 4 -33 4 q -13 0 -25 -3 q -12 -4 -23 -8 q -12 -4 -23 -7 q -12 -4 -24 -4 q -2 0 -10 3 q -8 3 -23 16 z">
-                    </path>
-                </svg></div>
-            <div id="formula-input" contenteditable="true"></div>
-        </div>
-        <div class="data-container">
-            <div id = "select-all"></div>
-            <div id = "columns">
-                <!-- <div class = "column-name">A</div>
-                <div class = "column-name">B</div> -->
-            </div>
-            <div id = "rows"></div>
-            <div id = "cells">
-                <!-- <div class = "cell-row">
-                </div> -->
-            </div>
-        </div>
-        <div class="sheet-bar">
-            <div class = "sheet-scroller">
-                <div class = "material-icons scroller left-scroller">arrow_left</div>
-                <div class = "material-icons scroller right-scroller">arrow_right</div>
-            </div>
-            <div class = "material-icons add-sheet">add_circle</div>
-            <div class = "sheet-tab-container">
-                <div class = "sheet-tab selected">Sheet1</div>
-            </div>
-        </div>
-        <!-- <div class = "sheet-options-modal">
-            <div class = "options sheet-rename">Rename</div>
-            <div class = "options sheet-delete">Delete</div>
-        </div> -->
-        <!-- Rename Modal -->
-        <!-- <div class = "sheet-modal-parent">
-            <div class = "sheet-rename-modal">
-                <div class = "sheet-modal-title">Rename Sheet</div>
-                <div class = "sheet-modal-input-container">
-                    <span class = "sheet-modal-input-title">Rename Sheet To:</span>
-                    <input class = "sheet-modal-input" type="text"/>
-                </div>
-                <div class = "sheet-modal-confirmation">
-                    <div class = "button yes-button">OK</div>
-                    <div class = "button no-button">Cancel</div>
-                </div>
-            </div> -->
-            <!-- Rename Modal Ends -->
-            
-            <!-- Delete Modal -->
-            <!-- <div class = "sheet-modal-parent">
-                <div class = "sheet-delete-modal">
-                    <div class = "sheet-modal-title">Sheet Name</div>
-                    <div class = "sheet-modal-detail-container">
-                        <span class = "sheet-modal-detail-title">Do you want to delete?</span>
-                    </div>
-                    <div class = "sheet-modal-confirmation">
-                        <div class = "button yes-button">
-                            <div class = "material-icons delete-icon">delete</div>     
-                            Delete
-                        </div>
-                        <div class = "button no-button">Cancel</div>
-                    </div>
-                </div>
-            </div> -->
-            <!-- Delete Modal Ends -->
 
-            <!-- <div class = "file-modal">
-                <div class = "file-options-modal">
-                    <div class = "close">
-                        <div class="material-icons close-icon">arrow_circle_down</div>
-                        <div>Close</div>
-                    </div>
-                    <div class = "new">
-                        <div class="material-icons new-icon">insert_drive_file</div>
-                        <div>New</div>
-                    </div>
-                    <div class = "open">
-                        <div class="material-icons open-icon">folder_open</div>
-                        <div>Open</div>
-                    </div>
-                    <div class = "save">
-                        <div class="material-icons save-icon">save</div>
-                        <div>Save</div>
-                    </div>
-                </div>
-                <div class = "file-recent-modal"></div>
-            </div> -->
+        <h2 class="subtitle">Code</h2>
+        <pre class="prettyprint">
+const ps = new PerfectScrollbar(demoDiv);
+
+button.addEventListener('click', () => {
+  demoDiv.style.width = `${widthInput.value}px`;
+  demoDiv.style.height = `${heightInput.value}px`;
+
+  ps.update();
+});
+</pre>
+        <h2 class="subtitle">Documentation</h2>
+        <p class="lead">
+          Please refer to the <a href="http://github.com/utatti/perfect-scrollbar">README</a>.
+        </p>
+        <h2 class="subtitle">License</h2>
+        <p class="lead">
+          The MIT License (MIT)
+          <br>
+          Copyright (c) 2012-2017 <a href="http://github.com/utatti">Hyunje Jun</a> and other <a href="https://github.com/utatti/perfect-scrollbar/graphs/contributors">contributors</a>.
+        </p>
+      </div>
     </div>
-    <script src = "script.js"></script>
-</body>
+    <script src="perfect-scrollbar.min.js"></script>
+    <script src="prettify.js"></script>
+    <script>
+    var $ = document.getElementById.bind(document);
 
+    var demoDiv = $('demo');
+    var widthInput = $('width');
+    var heightInput = $('height');
+    var button = $('button');
+
+    var ps = new PerfectScrollbar(demoDiv);
+
+    button.addEventListener('click', function () {
+      demoDiv.style.width = (widthInput.value || 600) + 'px';
+      demoDiv.style.height = (heightInput.value || 400) + 'px';
+
+      ps.update();
+    });
+
+    prettyPrint();
+    </script>
+  </body>
 </html>
